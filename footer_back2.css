@@ -1,0 +1,167 @@
+footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+footer .container {
+  width: 100%;
+}
+.footer-content {
+  width: 100%;
+  max-height: 188px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top, #111111, #2d2d2d);
+  color: #fff;
+  padding: 49px 25px;
+  box-sizing: border-box;
+}
+
+.notice {
+  width: 2800px;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  column-gap: 25px;
+}
+/*왼쪽 하단 '공지' 버튼 */
+.notice > span {
+  display: inline-block;
+  width: 150px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  background: linear-gradient(to top, #ffb800, #ffd770);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #222222;
+  font-weight: 500;
+}
+.notice .notice-txt {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap; /*줄 바꿈 X*/
+  overflow: hidden; /*넘치는 내용 안보이게*/
+  /*text-overflow: ellipsis;*/ /*넘치는 부분은 ...으로 나오게, overflow:hidden과 같이 써야 효과적으로 작동함*/
+  font-weight: 200;
+}
+.notice .notice-txt p {
+  display: inline-block;
+  padding-left: 100%; /*오른쪽 끝, 안보이는곳에서 시작*/
+  animation: notice-txt 20s linear infinite; /*적용할 애니메이션 이름, 지속 시간, 속도 일정 유지, 무한 반복*/
+}
+@keyframes notice-txt {
+  0% {
+    transform: translateX(0); /* 처음 위치 */
+  }
+  100% {
+    transform: translateX(-100%); /* 왼쪽 끝까지 이동 */
+  }
+}
+
+.widget {
+  display: flex;
+  column-gap: 40px; /*간격*/
+}
+
+.today-date {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  column-gap: 60px; /*날짜와 시간 사이의 간격*/
+  padding: 0 20px;
+  font-weight: 200;
+}
+.date {
+  position: relative;
+}
+/*오른쪽에 세로선 하나 생김*/
+.date::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: calc(100% + 30px);
+  width: 2px;
+  height: 100%;
+  background: #4f4f4f;
+}
+
+.weather {
+  display: flex;
+  column-gap: 10px;
+}
+/*()안에 있는거 빼고 나머지들한테 적용*/
+.weather-item:not(.today-weather) {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /*세로 방향으로 정렬*/
+  row-gap: 10px; /*세로 간격을 10px로*/
+}
+.today-weather {
+  display: flex;
+}
+.weather-box {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  column-gap: 60px;
+}
+.today-weather .weather-item-img,
+.dust-item-img {
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+}
+.weather-item:not(.today-weather) .weather-item-img {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+}
+.weather-item {
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+.weather-item > span {
+  font-size: 20px;
+  font-weight: 200;
+}
+.temperature {
+  position: relative;
+  color: #ffb800;
+  font-weight: 500;
+  font-size: 40px;
+}
+/*오른쪽에 세로선 하나 생김*/
+.temperature::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: calc(100% + 30px);
+  width: 2px;
+  height: 100%;
+  background: #4f4f4f;
+}
+.temperature,
+.dust {
+  display: flex;
+  align-items: center;
+}
+.dust span {
+  display: block;
+  font-size: 30px;
+  line-height: 36px;
+}
+/*첫번째 span 요소*/
+.dust span:nth-child(1) {
+  font-weight: 200;
+}
+/*두번째 span 요소*/
+.dust span:nth-child(2) {
+  font-weight: 600;
+}

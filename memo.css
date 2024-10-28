@@ -1,0 +1,21 @@
+.notice .notice-txt {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap; /*줄 바꿈 X*/
+  overflow: hidden; /*넘치는 내용 안보이게*/
+  /*text-overflow: ellipsis;*/ /*넘치는 부분은 ...으로 나오게, overflow:hidden과 같이 써야 효과적으로 작동함*/
+  font-weight: 200;
+}
+.notice .notice-txt p {
+  display: inline-block;
+  padding-left: 100%; /*오른쪽 끝, 안보이는곳에서 시작*/
+  animation: notice-txt 20s linear infinite; /*적용할 애니메이션 이름, 지속 시간, 속도 일정 유지, 무한 반복*/
+}
+@keyframes notice-txt {
+  0% {
+    transform: translateX(0); /* 처음 위치 */
+  }
+  100% {
+    transform: translateX(-100%); /* 왼쪽 끝까지 이동 */
+  }
+}
